@@ -1,14 +1,9 @@
 import { combineReducers, createStore, Dispatch } from "redux";
 import { useDispatch } from "react-redux";
-export type CounterAction =
-  | { type: "INCREMENT" }
-  | { type: "DECREMENT" }
-  | { type: "DECREMENT_BY_AMOUNT"; payload: number }
-  | { type: "INCREMENT_BY_AMOUNT"; payload: number };
+import { CounterAction } from "../type/CounterAction";
+import { CounterState } from "../type/CounterState";
 
-interface CounterState {
-  count: number;
-}
+
 
 const initialState: CounterState = {
   count: 0,
