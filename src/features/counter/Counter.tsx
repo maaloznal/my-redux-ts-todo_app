@@ -15,6 +15,11 @@ export function Counter() {
       >
         +5
       </button>
+      <button
+        onClick={() => dispatch({ type: "DECREMENT_BY_AMOUNT", payload: 5 })}
+      >
+        -5
+      </button>
     </div>
   );
 }

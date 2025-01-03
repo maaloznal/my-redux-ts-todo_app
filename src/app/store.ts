@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 export type CounterAction =
   | { type: "INCREMENT" }
   | { type: "DECREMENT" }
+  | { type: "DECREMENT_BY_AMOUNT"; payload: number }
   | { type: "INCREMENT_BY_AMOUNT"; payload: number };
 
 interface CounterState {
@@ -23,6 +24,8 @@ function counterReducer(
       return { ...state, count: state.count - 1 };
     case "INCREMENT_BY_AMOUNT":
       return { ...state, count: state.count + action.payload };
+    case "DECREMENT_BY_AMOUNT":
+      return { ...state, count: state.count - action.payload };
     default:
       return state;
   }
